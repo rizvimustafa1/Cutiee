@@ -173,3 +173,178 @@ function closePopup(){
 document.getElementById("popup").style.display="none";
 
 }
+/* ===========================================
+   FLOATING HEARTS
+=========================================== */
+
+const heartsContainer = document.getElementById("hearts");
+
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    const hearts=["❤️","💕","💖","💗","🌸"];
+
+    heart.className="heart";
+
+    heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left=Math.random()*100+"vw";
+
+    heart.style.fontSize=(18+Math.random()*18)+"px";
+
+    heart.style.animationDuration=(6+Math.random()*5)+"s";
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },11000);
+
+}
+
+setInterval(createHeart,450);
+
+/* ===========================================
+   PENGUIN GAME
+=========================================== */
+
+const gameArea=document.getElementById("gameArea");
+
+let penguinsCaught=0;
+
+function startGame(){
+
+    penguinsCaught=0;
+
+    gameArea.innerHTML="";
+
+    document.getElementById("gameResult").innerHTML="";
+
+    for(let i=0;i<5;i++){
+
+        const penguin=document.createElement("div");
+
+        penguin.innerHTML="🐧";
+
+        penguin.style.position="absolute";
+
+        penguin.style.fontSize="50px";
+
+        penguin.style.left=Math.random()*80+"%";
+
+        penguin.style.top=Math.random()*80+"%";
+
+        penguin.style.cursor="pointer";
+
+        penguin.style.transition=".25s";
+
+        penguin.onclick=function(){
+
+            penguin.style.transform="scale(0)";
+
+            setTimeout(()=>{
+
+                penguin.remove();
+
+            },200);
+
+            penguinsCaught++;
+
+            if(penguinsCaught===5){
+
+                document.getElementById("gameResult").innerHTML=`
+
+                <h3>🎉 You Found Them All!</h3>
+
+                <p>
+
+                You once told me that actions matter more than words.
+
+                So instead of writing another message...
+
+                I made this little website for you.
+
+                ❤️
+
+                </p>
+
+                <button onclick="showPage('promises')">
+
+                Continue ❤️
+
+                </button>
+
+                `;
+
+            }
+
+        };
+
+        gameArea.appendChild(penguin);
+
+    }
+
+}
+
+startGame();
+
+/* ===========================================
+   FINAL PAGE BUTTONS
+=========================================== */
+
+document.getElementById("yesButton").onclick=function(){
+
+    showPage("success");
+
+}
+
+document.getElementById("timeButton").onclick=function(){
+
+    showPage("wait");
+
+}
+
+/* ===========================================
+   RESTART GAME WHEN RETURNING
+=========================================== */
+
+const originalShowPage=showPage;
+
+showPage=function(pageId){
+
+    originalShowPage(pageId);
+
+    if(pageId==="game"){
+
+        startGame();
+
+    }
+
+}
+
+/* ===========================================
+   CLOSE POPUP WHEN CLICKING OUTSIDE
+=========================================== */
+
+document.getElementById("popup").addEventListener("click",function(e){
+
+    if(e.target.id==="popup"){
+
+        closePopup();
+
+    }
+
+});
+
+/* ===========================================
+   SMALL STARTUP ANIMATION
+=========================================== */
+
+window.onload=function(){
+
+    updateCounter();
+
+    updateChapter();
+
+};
