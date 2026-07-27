@@ -289,3 +289,42 @@ max-width:380px;
 width:100%;
 
 }
+
+.book{
+
+width:100%;
+max-width:380px;
+
+background:white;
+
+padding:30px;
+
+border-radius:25px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.1);
+
+}
+
+.chapter{
+
+min-height:260px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+animation:fade .6s;
+
+}
+
+#nextChapterBtn{
+
+width:100%;
+
+margin-top:30px;
+
+}
