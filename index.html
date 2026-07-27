@@ -4,61 +4,49 @@
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>For My Cutiee ❤️</title>
 
-<link rel="stylesheet" href="style.css">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<!-- Floating Background -->
-
-<div id="background"></div>
-
-
+<div id="hearts"></div>
 
 <!-- HOME -->
 
-<section class="page active" id="home">
+<section class="screen active" id="home">
 
-<div class="glass">
+<div class="card">
 
 <div class="penguin">
-
 🐧
-
 </div>
 
 <h1>
-
-Hi My Cutiee ❤️
-
+Hi Cutiee ❤️
 </h1>
 
 <p>
 
-I know one website cannot fix everything.
+I know one website can't fix everything.
 
 But I wanted to spend my time making something
-
-that was made only for you.
+that was created only for you.
 
 </p>
 
-<button onclick="nextPage('story')">
+<button onclick="goToPage('story')">
 
-Begin Our Story
+Begin Our Story ❤️
 
 </button>
 
@@ -70,27 +58,45 @@ Begin Our Story
 
 <!-- STORY -->
 
-<section class="page" id="story">
+<section class="screen" id="story">
 
-<div class="book">
+<div class="storyBook">
 
 <h2>📖 Our Story</h2>
 
-<div class="chapter activeChapter">
+<h3 id="chapterTitle">
 
-<h3>Chapter One</h3>
+How We Met
+
+</h3>
 
 <p id="chapterText">
 
-Write how you both met here.
+Write your story here.
 
 </p>
 
+<div class="storyButtons">
+
+<button onclick="previousChapter()">
+
+←
+
+</button>
+
+<button onclick="nextChapter()">
+
+→
+
+</button>
+
 </div>
 
-<button id="nextChapterBtn">
+<button class="continue"
 
-Next Chapter ❤️
+onclick="goToPage('counter')">
+
+Continue ❤️
 
 </button>
 
@@ -99,9 +105,12 @@ Next Chapter ❤️
 </section>
 
 
+
 <!-- COUNTER -->
 
-<section class="page" id="counter">
+<section class="screen" id="counter">
+
+<div class="card">
 
 <h2>
 
@@ -109,7 +118,7 @@ Next Chapter ❤️
 
 </h2>
 
-<div id="timer">
+<div id="counterBox">
 
 Loading...
 
@@ -117,15 +126,17 @@ Loading...
 
 <p>
 
-Every second has been my favourite.
+Every second with you has meant the world to me.
 
 </p>
 
-<button onclick="nextPage('letters')">
+<button onclick="goToPage('letters')">
 
 Continue
 
 </button>
+
+</div>
 
 </section>
 
@@ -133,13 +144,23 @@ Continue
 
 <!-- LETTERS -->
 
-<section class="page" id="letters">
+<section class="screen" id="letters">
+
+<div class="card">
 
 <h2>
 
 💌 Love Letters
 
 </h2>
+
+<p>
+
+Tap a letter to open it.
+
+</p>
+
+<div class="letterRow">
 
 <div class="letter"
 
@@ -165,11 +186,15 @@ onclick="openLetter(2)">
 
 </div>
 
-<button onclick="nextPage('game')">
+</div>
 
-Next
+<button onclick="goToPage('game')">
+
+Continue
 
 </button>
+
+</div>
 
 </section>
 
@@ -177,17 +202,19 @@ Next
 
 <!-- GAME -->
 
-<section class="page" id="game">
+<section class="screen" id="game">
+
+<div class="card">
 
 <h2>
 
-🐧 Catch The Penguin
+🐧 Catch The Penguins
 
 </h2>
 
 <p>
 
-Tap all 5 penguins.
+Catch all five penguins.
 
 </p>
 
@@ -195,7 +222,45 @@ Tap all 5 penguins.
 
 </div>
 
-<div id="gameMessage">
+<div id="gameResult">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PROMISES -->
+
+<section class="screen" id="promises">
+
+<div class="card">
+
+<h2>
+
+🌸 My Promises
+
+</h2>
+
+<ul>
+
+<li>❤️ I'll communicate better.</li>
+
+<li>❤️ I'll listen more carefully.</li>
+
+<li>❤️ I'll never stop choosing us.</li>
+
+<li>❤️ I'll keep growing every day.</li>
+
+</ul>
+
+<button onclick="goToPage('final')">
+
+Last Page ❤️
+
+</button>
 
 </div>
 
@@ -205,9 +270,9 @@ Tap all 5 penguins.
 
 <!-- FINAL -->
 
-<section class="page"
+<section class="screen" id="final">
 
-id="final">
+<div class="card">
 
 <h1>
 
@@ -223,27 +288,33 @@ Will You Give Me Another Chance?
 
 <p>
 
-I know this website cannot fix everything.
+I know trust takes time.
 
-I simply wanted to spend my time making
+I know effort matters more than words.
 
-something that was only for you.
+This website isn't meant to change your mind.
+
+It's simply my way of showing you
+
+how much you mean to me.
 
 </p>
 
-<div class="buttons">
+<div class="finalButtons">
 
-<button>
+<button id="yesBtn">
 
 Yes ❤️
 
 </button>
 
-<button>
+<button id="timeBtn">
 
 I Need More Time 🌸
 
 </button>
+
+</div>
 
 </div>
 
@@ -255,15 +326,11 @@ I Need More Time 🌸
 
 <div id="popup">
 
-<div id="popupCard">
+<div class="popupCard">
 
-<h2 id="popupTitle">
+<h2 id="popupTitle"></h2>
 
-</h2>
-
-<p id="popupText">
-
-</p>
+<p id="popupBody"></p>
 
 <button onclick="closePopup()">
 
@@ -275,11 +342,7 @@ Close
 
 </div>
 
-
-
-<script src="script.js">
-
-</script>
+<script src="script.js"></script>
 
 </body>
 
