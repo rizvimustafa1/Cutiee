@@ -3,17 +3,18 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For My Cutiee ❤️</title>
+    <title>For My Cutiee ❤️</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -21,32 +22,35 @@
 
 <div id="hearts"></div>
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
 
-<section class="screen active" id="home">
+<section class="page active" id="home">
 
-<div class="card">
+<div class="glass">
 
 <div class="penguin">
+
 🐧
+
 </div>
 
 <h1>
+
 Hi Cutiee ❤️
+
 </h1>
 
 <p>
 
 I know one website can't fix everything.
 
-But I wanted to spend my time making something
-that was created only for you.
+But I wanted to spend my time making something that was made only for you.
 
 </p>
 
-<button onclick="goToPage('story')">
+<button onclick="showPage('story')">
 
-Begin Our Story ❤️
+Begin Our Story
 
 </button>
 
@@ -54,15 +58,19 @@ Begin Our Story ❤️
 
 </section>
 
+<!-- ================= STORY ================= -->
 
+<section class="page" id="story">
 
-<!-- STORY -->
+<div class="glass book">
 
-<section class="screen" id="story">
+<h2>
 
-<div class="storyBook">
+📖 Our Story
 
-<h2>📖 Our Story</h2>
+</h2>
+
+<div class="chapter">
 
 <h3 id="chapterTitle">
 
@@ -72,29 +80,39 @@ How We Met
 
 <p id="chapterText">
 
-Write your story here.
+Your first story goes here.
+
+Talk about how you met.
+
+What you first thought.
+
+How everything slowly changed.
+
+This is where your memories begin.
 
 </p>
+
+</div>
 
 <div class="storyButtons">
 
 <button onclick="previousChapter()">
 
-←
+← Previous
 
 </button>
 
 <button onclick="nextChapter()">
 
-→
+Next →
 
 </button>
 
 </div>
 
-<button class="continue"
+<div class="continueButton">
 
-onclick="goToPage('counter')">
+<button onclick="showPage('counter')">
 
 Continue ❤️
 
@@ -102,15 +120,15 @@ Continue ❤️
 
 </div>
 
+</div>
+
 </section>
 
+<!-- ================= COUNTER ================= -->
 
+<section class="page" id="counter">
 
-<!-- COUNTER -->
-
-<section class="screen" id="counter">
-
-<div class="card">
+<div class="glass">
 
 <h2>
 
@@ -120,17 +138,17 @@ Continue ❤️
 
 <div id="counterBox">
 
-Loading...
+0 Days
 
 </div>
 
 <p>
 
-Every second with you has meant the world to me.
+Every second with you has been worth it.
 
 </p>
 
-<button onclick="goToPage('letters')">
+<button onclick="showPage('letters')">
 
 Continue
 
@@ -140,13 +158,11 @@ Continue
 
 </section>
 
+<!-- ================= LETTERS ================= -->
 
+<section class="page" id="letters">
 
-<!-- LETTERS -->
-
-<section class="screen" id="letters">
-
-<div class="card">
+<div class="glass">
 
 <h2>
 
@@ -156,39 +172,31 @@ Continue
 
 <p>
 
-Tap a letter to open it.
+Tap an envelope.
 
 </p>
 
-<div class="letterRow">
+<div class="letters">
 
-<div class="letter"
-
-onclick="openLetter(0)">
-
+<div class="letter" onclick="openLetter(0)">
 💌
-
 </div>
 
-<div class="letter"
-
-onclick="openLetter(1)">
-
+<div class="letter" onclick="openLetter(1)">
 💌
-
 </div>
 
-<div class="letter"
-
-onclick="openLetter(2)">
-
+<div class="letter" onclick="openLetter(2)">
 💌
+</div>
 
+<div class="letter" onclick="openLetter(3)">
+💌
 </div>
 
 </div>
 
-<button onclick="goToPage('game')">
+<button onclick="showPage('game')">
 
 Continue
 
@@ -198,13 +206,11 @@ Continue
 
 </section>
 
+<!-- ================= GAME ================= -->
 
+<section class="page" id="game">
 
-<!-- GAME -->
-
-<section class="screen" id="game">
-
-<div class="card">
+<div class="glass">
 
 <h2>
 
@@ -214,7 +220,7 @@ Continue
 
 <p>
 
-Catch all five penguins.
+Catch every penguin to unlock the surprise.
 
 </p>
 
@@ -227,38 +233,49 @@ Catch all five penguins.
 </div>
 
 </div>
+  
+  <!-- ================= PROMISES ================= -->
 
-</section>
+<section class="page" id="promises">
 
-
-
-<!-- PROMISES -->
-
-<section class="screen" id="promises">
-
-<div class="card">
+<div class="glass">
 
 <h2>
-
 🌸 My Promises
-
 </h2>
 
-<ul>
+<p class="promiseIntro">
+These aren't just words.
+These are promises I want to keep.
+</p>
 
-<li>❤️ I'll communicate better.</li>
+<div class="promiseList">
 
-<li>❤️ I'll listen more carefully.</li>
+<div class="promiseCard">
+❤️ I'll communicate better.
+</div>
 
-<li>❤️ I'll never stop choosing us.</li>
+<div class="promiseCard">
+❤️ I'll listen before reacting.
+</div>
 
-<li>❤️ I'll keep growing every day.</li>
+<div class="promiseCard">
+❤️ I'll appreciate the little things.
+</div>
 
-</ul>
+<div class="promiseCard">
+❤️ I'll always choose us.
+</div>
 
-<button onclick="goToPage('final')">
+<div class="promiseCard">
+❤️ I'll keep becoming a better person.
+</div>
 
-Last Page ❤️
+</div>
+
+<button onclick="showPage('final')">
+
+One Last Thing ❤️
 
 </button>
 
@@ -266,19 +283,17 @@ Last Page ❤️
 
 </section>
 
+<!-- ================= FINAL ================= -->
 
+<section class="page" id="final">
 
-<!-- FINAL -->
+<div class="glass finalCard">
 
-<section class="screen" id="final">
-
-<div class="card">
-
-<h1>
+<div class="bigHeart">
 
 ❤️
 
-</h1>
+</div>
 
 <h2>
 
@@ -288,27 +303,28 @@ Will You Give Me Another Chance?
 
 <p>
 
-I know trust takes time.
+I'm not expecting this website to erase everything.
 
-I know effort matters more than words.
+I just wanted to spend my time creating something
+that reminds you how much you mean to me.
 
-This website isn't meant to change your mind.
+Whether your answer is today,
+next week,
+or much later...
 
-It's simply my way of showing you
-
-how much you mean to me.
+I'll always be grateful that you were part of my life.
 
 </p>
 
 <div class="finalButtons">
 
-<button id="yesBtn">
+<button id="yesButton">
 
 Yes ❤️
 
 </button>
 
-<button id="timeBtn">
+<button id="timeButton">
 
 I Need More Time 🌸
 
@@ -320,17 +336,23 @@ I Need More Time 🌸
 
 </section>
 
-
-
-<!-- POPUP -->
+<!-- ================= POPUP ================= -->
 
 <div id="popup">
 
 <div class="popupCard">
 
-<h2 id="popupTitle"></h2>
+<h2 id="popupTitle">
 
-<p id="popupBody"></p>
+Title
+
+</h2>
+
+<p id="popupText">
+
+Letter goes here.
+
+</p>
 
 <button onclick="closePopup()">
 
@@ -342,8 +364,79 @@ Close
 
 </div>
 
+<!-- ================= SUCCESS SCREEN ================= -->
+
+<section class="page" id="success">
+
+<div class="glass">
+
+<div class="bigHeart">
+
+💖
+
+</div>
+
+<h1>
+
+Thank You
+
+</h1>
+
+<p>
+
+Thank you for giving us another chance.
+
+I know this is only the beginning.
+
+I promise to spend every day trying to deserve your love.
+
+🐧❤️
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= WAIT SCREEN ================= -->
+
+<section class="page" id="wait">
+
+<div class="glass">
+
+🌸
+
+<h2>
+
+That's Okay
+
+</h2>
+
+<p>
+
+If you're not ready...
+
+I'll respect your feelings.
+
+Thank you for taking the time
+to go through everything I made.
+
+Whether your answer changes or not...
+
+You'll always be my favourite penguin.
+
+🐧❤️
+
+</p>
+
+</div>
+
+</section>
+
 <script src="script.js"></script>
 
 </body>
 
 </html>
+
+</section>
