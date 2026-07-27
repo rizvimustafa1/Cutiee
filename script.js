@@ -312,3 +312,47 @@ document.getElementById("timeBtn").onclick = function () {
     `;
 
 }
+
+// ================================
+// CONFETTI
+// ================================
+
+function startConfetti(){
+
+for(let i=0;i<120;i++){
+
+const c=document.createElement("div");
+
+c.innerHTML=["❤️","🌸","💕","💖"][Math.floor(Math.random()*4)];
+
+c.style.position="fixed";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.top="-50px";
+
+c.style.fontSize=(20+Math.random()*20)+"px";
+
+c.style.pointerEvents="none";
+
+c.style.zIndex=9999;
+
+c.style.transition="4s linear";
+
+document.body.appendChild(c);
+
+setTimeout(()=>{
+
+c.style.transform=`translateY(${window.innerHeight+200}px) rotate(${Math.random()*720}deg)`;
+
+},20);
+
+setTimeout(()=>{
+
+c.remove();
+
+},4500);
+
+}
+
+}
