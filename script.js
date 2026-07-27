@@ -1,219 +1,245 @@
-// ===============================
-// LOADING SCREEN
-// ===============================
+// ================================
+// PAGES
+// ================================
 
-setTimeout(() => {
+const pages = document.querySelectorAll(".page");
 
-    nextScreen("welcome");
+function nextSection(id) {
 
-}, 3000);
+    pages.forEach(page => page.classList.remove("active"));
 
+    document.getElementById(id).classList.add("active");
 
-
-
-// ===============================
-// SCREEN SWITCHING
-// ===============================
-
-function nextScreen(id) {
-
-    const currentScreen = document.querySelector(".screen.active");
-
-    if(currentScreen){
-        currentScreen.classList.remove("active");
-    }
-
-
-    const next = document.getElementById(id);
-
-    if(next){
-        next.classList.add("active");
-    }
+    window.scrollTo(0, 0);
 
 }
 
 
 
+// ================================
+// LOADING
+// ================================
 
-// ===============================
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        nextSection("welcome");
+
+    }, 2500);
+
+});
+
+
+
+
+// ================================
+// RELATIONSHIP COUNTER
+// 13 APRIL 2025
+// ================================
+
+const startDate = new Date("2025-04-13T00:00:00");
+
+function updateCounter() {
+
+    const now = new Date();
+
+    let diff = now - startDate;
+
+    let seconds = Math.floor(diff / 1000);
+    let minutes = Math.floor(seconds / 60);
+    let hours = Math.floor(minutes / 60);
+    let days = Math.floor(hours / 24);
+
+    const years = Math.floor(days / 365);
+    days -= years * 365;
+
+    const months = Math.floor(days / 30);
+    days -= months * 30;
+
+    hours %= 24;
+    minutes %= 60;
+    seconds %= 60;
+
+    document.getElementById("years").textContent = years;
+    document.getElementById("months").textContent = months;
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+
+}
+
+updateCounter();
+
+setInterval(updateCounter, 1000);
+
+
+
+
+// ================================
 // FLOATING HEARTS
-// ===============================
+// ================================
 
-function createHeart(){
+const heartContainer = document.getElementById("hearts");
+
+function createHeart() {
 
     const heart = document.createElement("div");
 
     heart.className = "heart";
 
-    heart.innerHTML = "❤️";
-
+    heart.innerHTML = Math.random() > 0.5 ? "❤" : "♡";
 
     heart.style.left = Math.random() * 100 + "%";
 
+    heart.style.fontSize = (14 + Math.random() * 18) + "px";
 
-    heart.style.fontSize =
-    (Math.random() * 20 + 15) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 4) + "s";
 
+    heartContainer.appendChild(heart);
 
-    heart.style.animationDuration =
-    (Math.random() * 3 + 4) + "s";
-
-
-    document
-    .getElementById("hearts")
-    .appendChild(heart);
-
-
-
-    setTimeout(()=>{
+    setTimeout(() => {
 
         heart.remove();
 
-    },7000);
+    }, 9000);
 
 }
 
-
-
-setInterval(createHeart,500);
-
+setInterval(createHeart, 700);
 
 
 
 
+// ================================
+// COMPLIMENTS
+// ================================
 
-// ===============================
-// RELATIONSHIP COUNTER
-// START DATE: 13 APRIL 2025
-// ===============================
+const compliments = [
 
+"Beautiful",
 
-const startDate = new Date("April 13, 2025 00:00:00");
+"Pretty",
 
+"Cute",
 
+"Hot",
 
-function updateCounter(){
+"My Favourite Person",
 
+"Your Smile",
 
-    const now = new Date();
+"Your Laugh",
 
+"Your Eyes",
 
-    let difference = now - startDate;
+"Your Voice",
 
+"Your Ice Cream Obsession 🍦",
 
+"Your Little Attitude",
 
-    let seconds = Math.floor(
-        difference / 1000
-    );
+"Your Random Stories",
 
+"My Penguin 🐧",
 
-    let minutes = Math.floor(
-        seconds / 60
-    );
+"Kind",
 
+"Caring",
 
-    let hours = Math.floor(
-        minutes / 60
-    );
+"Funny",
 
+"Your Good Morning Texts",
 
-    let days = Math.floor(
-        hours / 24
-    );
+"The Way You Say My Name",
 
+"Your Sleepy Face",
 
+"Your Happiness",
 
-    let years = Math.floor(
-        days / 365
-    );
+"The Way You Laugh",
 
+"The Way You Care",
 
-    days = days % 365;
+"My Safe Place",
 
+"My Peace",
 
+"Everything About You ❤️"
 
-    let months = Math.floor(
-        days / 30
-    );
+];
 
+const complimentArea = document.getElementById("complimentArea");
 
-    days = days % 30;
+let complimentIndex = 0;
 
+function showCompliment() {
 
+    if (complimentIndex >= compliments.length) return;
 
-    hours = hours % 24;
+    const bubble = document.createElement("div");
 
+    bubble.className = "compliment";
 
-    minutes = minutes % 60;
+    bubble.textContent = compliments[complimentIndex];
 
+    const rotation = (Math.random() * 10 - 5);
 
-    seconds = seconds % 60;
+    bubble.style.transform = `rotate(${rotation}deg)`;
 
+    complimentArea.appendChild(bubble);
 
-
-
-    document.getElementById("years").innerHTML = years;
-
-    document.getElementById("months").innerHTML = months;
-
-    document.getElementById("days").innerHTML = days;
-
-    document.getElementById("hours").innerHTML = hours;
-
-    document.getElementById("minutes").innerHTML = minutes;
-
-    document.getElementById("seconds").innerHTML = seconds;
-
+    complimentIndex++;
 
 }
 
-
-
-setInterval(updateCounter,1000);
-
-updateCounter();
+setInterval(showCompliment, 1000);
 
 
 
 
+// ================================
+// ENDINGS
+// ================================
 
+function showEnding(type) {
 
-// ===============================
-// FINAL CHOICES
-// ===============================
+    pages.forEach(page => page.classList.remove("active"));
 
+    document.getElementById(type).classList.add("active");
 
-function happyEnding(){
+    if (type === "happy") {
 
+        celebrate();
 
-    const current = document.querySelector(".screen.active");
-
-
-    current.classList.remove("active");
-
-
-    document
-    .getElementById("happy")
-    .classList.add("active");
-
+    }
 
 }
 
 
 
 
-function sadEnding(){
+// ================================
+// CELEBRATION
+// ================================
 
+function celebrate() {
 
-    const current = document.querySelector(".screen.active");
+    let count = 0;
 
+    const timer = setInterval(() => {
 
-    current.classList.remove("active");
+        createHeart();
 
+        count++;
 
-    document
-    .getElementById("sad")
-    .classList.add("active");
+        if (count > 80) {
 
+            clearInterval(timer);
+
+        }
+
+    }, 120);
 
 }
