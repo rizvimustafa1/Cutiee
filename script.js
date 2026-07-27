@@ -1,66 +1,179 @@
-// ==========================
+// ================================
 // PAGE NAVIGATION
-// ==========================
+// ================================
 
-function nextPage(id) {
-    document.querySelectorAll(".page").forEach(page => {
-        page.classList.remove("active");
+function goToPage(pageId) {
+    document.querySelectorAll(".screen").forEach(screen => {
+        screen.classList.remove("active");
     });
 
-    document.getElementById(id).classList.add("active");
-
-    window.scrollTo(0, 0);
+    document.getElementById(pageId).classList.add("active");
 }
 
-// ==========================
+// ================================
 // FLOATING HEARTS
-// ==========================
+// ================================
 
-const background = document.getElementById("background");
+const heartsContainer = document.getElementById("hearts");
 
-function createHeart() {
+function createHeart(){
 
-    const heart = document.createElement("div");
+    const heart=document.createElement("div");
 
-    heart.className = "heart";
+    heart.className="heart";
 
-    heart.innerHTML = ["❤️","💖","💕","🌸"][Math.floor(Math.random()*4)];
+    const emojis=["❤️","💕","💖","🌸"];
 
-    heart.style.left = Math.random()*100 + "vw";
+    heart.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
 
-    heart.style.fontSize = (18 + Math.random()*18) + "px";
+    heart.style.left=Math.random()*100+"vw";
 
-    heart.style.animationDuration = (8 + Math.random()*6) + "s";
+    heart.style.fontSize=(18+Math.random()*18)+"px";
 
-    background.appendChild(heart);
+    heart.style.animationDuration=(8+Math.random()*5)+"s";
+
+    heartsContainer.appendChild(heart);
 
     setTimeout(()=>{
         heart.remove();
-    },14000);
+    },13000);
 
 }
 
-setInterval(createHeart,500);
+setInterval(createHeart,450);
 
-// ==========================
+// ================================
+// STORY BOOK
+// ================================
+
+const chapters=[
+
+{
+title:"How We Met ❤️",
+text:"Replace this with your own story."
+},
+
+{
+title:"The First Time I Smiled Because Of You 🐧",
+text:"Write your second chapter here."
+},
+
+{
+title:"The Little Moments 🌸",
+text:"Write another memory here."
+},
+
+{
+title:"Today ❤️",
+text:"Write what you want her to know today."
+}
+
+];
+
+let currentChapter=0;
+
+function showChapter(){
+
+document.getElementById("chapterTitle").innerHTML=chapters[currentChapter].title;
+
+document.getElementById("chapterText").innerHTML=chapters[currentChapter].text;
+
+}
+
+showChapter();
+
+function nextChapter(){
+
+if(currentChapter<chapters.length-1){
+
+currentChapter++;
+
+showChapter();
+
+}
+
+}
+
+function previousChapter(){
+
+if(currentChapter>0){
+
+currentChapter--;
+
+showChapter();
+
+}
+
+}
+
+// ================================
+// RELATIONSHIP COUNTER
+// ================================
+
+// CHANGE THIS DATE
+
+const relationshipDate=new Date("2025-01-01T00:00:00");
+
+function updateCounter(){
+
+const now=new Date();
+
+const diff=now-relationshipDate;
+
+const days=Math.floor(diff/(1000*60*60*24));
+
+const hours=Math.floor(diff/(1000*60*60))%24;
+
+const minutes=Math.floor(diff/(1000*60))%60;
+
+const seconds=Math.floor(diff/1000)%60;
+
+document.getElementById("counterBox").innerHTML=`
+
+<div>${days} Days</div>
+
+<div>${hours} Hours</div>
+
+<div>${minutes} Minutes</div>
+
+<div>${seconds} Seconds</div>
+
+`;
+
+}
+
+setInterval(updateCounter,1000);
+
+updateCounter();
+
+// ================================
 // LOVE LETTERS
-// ==========================
+// ================================
 
-const letters = [
+const letters=[
 
 {
-title:"My Cutiee ❤️",
-body:"Write your first love letter here. Tell her something only she would understand."
+
+title:"Dear Cutiee ❤️",
+
+body:"Write your first love letter here."
+
 },
 
 {
+
 title:"My Favourite Penguin 🐧",
-body:"Write your second letter here. Maybe your favourite memory together."
+
+body:"Write your second love letter here."
+
 },
 
 {
+
 title:"One Last Letter 🌸",
-body:"Write your final heartfelt message here."
+
+body:"Write your third love letter here."
+
 }
 
 ];
@@ -71,7 +184,7 @@ document.getElementById("popup").style.display="flex";
 
 document.getElementById("popupTitle").innerHTML=letters[index].title;
 
-document.getElementById("popupText").innerHTML=letters[index].body;
+document.getElementById("popupBody").innerHTML=letters[index].body;
 
 }
 
@@ -81,48 +194,21 @@ document.getElementById("popup").style.display="none";
 
 }
 
-// ==========================
-// RELATIONSHIP COUNTER
-// ==========================
-
-// CHANGE THIS DATE
-const togetherDate = new Date("2024-01-01T00:00:00");
-
-function updateCounter(){
-
-const now = new Date();
-
-const diff = now - togetherDate;
-
-const days = Math.floor(diff / (1000*60*60*24));
-
-const hours = Math.floor(diff / (1000*60*60)) % 24;
-
-const minutes = Math.floor(diff / (1000*60)) % 60;
-
-const seconds = Math.floor(diff / 1000) % 60;
-
-document.getElementById("timer").innerHTML = `
-<div style="font-size:55px;">❤️</div>
-<div>${days} Days</div>
-<div>${hours} Hours</div>
-<div>${minutes} Minutes</div>
-<div>${seconds} Seconds</div>
-`;
-
-}
-
-setInterval(updateCounter,1000);
-
-updateCounter();
-
-// ==========================
+// ================================
 // MINI GAME
-// ==========================
+// ================================
 
 const gameArea=document.getElementById("gameArea");
 
-let caught=0;
+let score=0;
+
+function createPenguins(){
+
+gameArea.innerHTML="";
+
+score=0;
+
+document.getElementById("gameResult").innerHTML="";
 
 for(let i=0;i<5;i++){
 
@@ -132,11 +218,11 @@ penguin.innerHTML="🐧";
 
 penguin.style.position="absolute";
 
-penguin.style.left=Math.random()*80+"vw";
+penguin.style.left=Math.random()*80+"%";
 
-penguin.style.top=(20+Math.random()*60)+"vh";
+penguin.style.top=Math.random()*80+"%";
 
-penguin.style.fontSize="50px";
+penguin.style.fontSize="48px";
 
 penguin.style.cursor="pointer";
 
@@ -144,73 +230,60 @@ penguin.onclick=function(){
 
 penguin.remove();
 
-caught++;
+score++;
 
-if(caught===5){
+if(score===5){
 
-document.getElementById("gameMessage").innerHTML=`
-<h2>🎁 Surprise ❤️</h2>
+document.getElementById("gameResult").innerHTML=`
+
+<h3>🎁 Surprise ❤️</h3>
+
 <p>
-You once told me you wanted effort, not words.
-So instead of sending another paragraph...
-I spent my time making something just for you.
+
+You once told me that you wanted effort...
+
+not words.
+
+So I made this little website for you.
+
 </p>
 
-<button onclick="nextPage('final')">
+<button onclick="goToPage('promises')">
+
 Continue ❤️
+
 </button>
+
 `;
 
 }
 
-}
+};
 
 gameArea.appendChild(penguin);
 
 }
 
-// STORYBOOK
-
-const chapters=[
-
-{
-title:"How We Met ❤️",
-text:"Write your first story here."
-},
-
-{
-title:"The Day I Knew 🐧",
-text:"Write your second story here."
-},
-
-{
-title:"My Favourite Person 🌸",
-text:"Write your third story here."
-},
-
-{
-title:"Today ❤️",
-text:"Write whatever you want her to know."
 }
 
-];
+createPenguins();
 
-let chapter=0;
+// ================================
+// FINAL BUTTONS
+// ================================
 
-document.getElementById("nextChapterBtn").onclick=function(){
+document.getElementById("yesBtn").onclick=function(){
 
-chapter++;
+this.innerHTML="❤️ Thank You ❤️";
 
-if(chapter>=chapters.length){
+this.disabled=true;
 
-nextPage("counter");
-
-return;
+alert("Thank you for giving us another chance ❤️");
 
 }
 
-document.querySelector(".chapter h3").innerHTML=chapters[chapter].title;
+document.getElementById("timeBtn").onclick=function(){
 
-document.getElementById("chapterText").innerHTML=chapters[chapter].text;
+alert("That's okay. I'll respect your feelings and your time. ❤️");
 
 }
