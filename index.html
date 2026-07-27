@@ -3,37 +3,39 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For My Cutiee ❤️</title>
+    <title>For My Cutiee ❤️</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 </head>
 
-
 <body>
 
+<div class="background-glow"></div>
 
 <div id="hearts"></div>
 
+<!-- LOADING -->
 
+<section id="loading" class="page active">
 
-<!-- SCREEN 1 : LOADING -->
+    <div class="center">
 
-<section class="screen active" id="loading">
+        <div class="small">Made just for you</div>
 
-    <div class="content">
-
-        <h1>❤️</h1>
-
-        <h2>I made something<br>for you...</h2>
+        <h1>I made something for you.</h1>
 
         <div class="loader">
-            <div class="loading-bar"></div>
+            <span></span>
         </div>
 
     </div>
@@ -42,39 +44,161 @@
 
 
 
+<!-- WELCOME -->
 
-<!-- SCREEN 2 : WELCOME -->
+<section id="welcome" class="page">
 
-<section class="screen" id="welcome">
+    <div class="center">
 
-<div class="content">
+        <p class="eyebrow">For Sania ❤️</p>
 
-<h1>Hi Cutiee ❤️</h1>
+        <h1>Hi Cutiee.</h1>
+
+        <p class="text">
+
+            I spent my whole day making this.
+
+            <br><br>
+
+            Me ye idea apology ke liye use nahi karna chahta tha...
+
+            <br><br>
+
+            But here we are.
+
+            <br><br>
+
+            I don't want this website to convince you.
+
+            I want it to show you
+
+            how much you matter to me.
+
+        </p>
+
+        <button onclick="nextSection('story')">
+
+            Continue
+
+        </button>
+
+    </div>
+
+</section>
 
 
-<p>
 
-I have spent my whole day making this for you.
 
-<br><br>
 
-Me ye idea apology ke liye use nahi karna chahta tha...
+<!-- STORY -->
 
-<br><br>
+<section id="story" class="page">
 
-<b>BUT HERE WE ARE 😭❤️</b>
+    <div class="center">
 
-<br><br>
+        <p class="eyebrow">
 
-I just wanted to show you that you are worth my effort.
+            Since 13 April 2025
+
+        </p>
+
+        <h1>Our Story</h1>
+
+        <div class="counter">
+
+            <div>
+
+                <span id="years">0</span>
+
+                <small>Years</small>
+
+            </div>
+
+            <div>
+
+                <span id="months">0</span>
+
+                <small>Months</small>
+
+            </div>
+
+            <div>
+
+                <span id="days">0</span>
+
+                <small>Days</small>
+
+            </div>
+
+            <div>
+
+                <span id="hours">0</span>
+
+                <small>Hours</small>
+
+            </div>
+
+            <div>
+
+                <span id="minutes">0</span>
+
+                <small>Minutes</small>
+
+            </div>
+
+            <div>
+
+                <span id="seconds">0</span>
+
+                <small>Seconds</small>
+
+            </div>
+
+        </div>
+
+        <p class="quote">
+
+            Every second with you has been worth it.
+
+        </p>
+
+        <button onclick="nextSection('special')">
+
+            Continue
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- COMPLIMENTS -->
+
+<section id="special" class="page">
+
+<div class="center">
+
+<p class="eyebrow">
+
+Things I Love About You
 
 </p>
 
+<h1>You.</h1>
 
-<button onclick="nextScreen('story')">
-Enter ❤️
+<div id="complimentArea">
+
+</div>
+
+<button onclick="nextSection('letter')">
+
+Continue
+
 </button>
-
 
 </div>
 
@@ -84,212 +208,21 @@ Enter ❤️
 
 
 
-<!-- SCREEN 3 : STORY -->
+<!-- LETTER -->
 
-<section class="screen" id="story">
+<section id="letter" class="page">
 
-<div class="content">
+<div class="center letter-page">
 
+<p class="eyebrow">
 
-<h1>🐧❤️</h1>
-
-<h2>Our Story</h2>
-
-
-<p>
-Since 13 April 2025
-</p>
-
-
-
-<div class="counter">
-
-
-<div>
-<span id="years">0</span>
-<small>Years</small>
-</div>
-
-
-<div>
-<span id="months">0</span>
-<small>Months</small>
-</div>
-
-
-<div>
-<span id="days">0</span>
-<small>Days</small>
-</div>
-
-
-<div>
-<span id="hours">0</span>
-<small>Hours</small>
-</div>
-
-
-<div>
-<span id="minutes">0</span>
-<small>Minutes</small>
-</div>
-
-
-<div>
-<span id="seconds">0</span>
-<small>Seconds</small>
-</div>
-
-
-</div>
-
-
-<p class="quote">
-Every second with you is worth it ❤️
-</p>
-
-
-<button onclick="nextScreen('special')">
-Continue ❤️
-</button>
-
-
-</div>
-
-</section>
-
-
-
-
-
-
-
-<!-- SCREEN 4 : WHY YOU ARE SPECIAL -->
-
-
-<section class="screen" id="special">
-
-<div class="content">
-
-
-<h1>🌸</h1>
-
-<h2>Why You Are Special</h2>
-
-
-<div class="compliments">
-
-
-<span>Your Smile ❤️</span>
-<span>Your Laugh 😂</span>
-<span>My Cutiee 🐧</span>
-<span>Beautiful 🌸</span>
-<span>Pretty ✨</span>
-<span>Hot 🔥</span>
-<span>Ice Cream Lover 🍦</span>
-<span>Your Cute Anger 😭</span>
-<span>Your Eyes ❤️</span>
-<span>Your Voice 💕</span>
-<span>Your Random Stories</span>
-<span>Your Kind Heart</span>
-<span>Your Crazy Side 😂</span>
-<span>Your Little Habits</span>
-<span>Your Caring Nature</span>
-<span>Your Innocence</span>
-<span>Your Hugs 🤍</span>
-<span>Your Smile After Laughing</span>
-<span>The Way You Talk</span>
-<span>The Way You Make Me Happy</span>
-<span>My Favourite Human ❤️</span>
-
-
-</div>
-
-
-<button onclick="nextScreen('memory')">
-Continue ❤️
-</button>
-
-
-</div>
-
-</section>
-
-
-
-
-
-
-<!-- SCREEN 5 : MEMORY -->
-
-
-<section class="screen" id="memory">
-
-<div class="content">
-
-
-<h1>📸</h1>
-
-<h2>My Favourite Memory</h2>
-
-
-
-<div class="photo-box">
-
-<img src="memory.jpg" alt="Our Memory">
-
-</div>
-
-
-
-<p>
-
-Our first and only meetup ❤️
-
-<br><br>
-
-Not a date...
-
-but still one of my favourite moments.
-
-<br><br>
-
-Because I finally got to spend time with you.
+A Letter
 
 </p>
 
+<h1>To My Cutiee</h1>
 
-
-<button onclick="nextScreen('letter')">
-Continue ❤️
-</button>
-
-
-</div>
-
-</section>
-
-
-
-
-
-
-<!-- SCREEN 6 : LETTER -->
-
-
-<section class="screen" id="letter">
-
-<div class="content">
-
-
-<h1>💌</h1>
-
-<h2>My Letter</h2>
-
-
-
-<div class="letter-box">
-
+<div class="letter">
 
 <p>
 
@@ -297,11 +230,19 @@ My dearest Cutiee,
 
 <br><br>
 
+Write your entire letter here.
 
-(Write your letter here)
+Don't worry about making it short.
+
+Let it be honest.
+
+Let it sound like you.
 
 <br><br>
 
+This is the heart of the website.
+
+<br><br>
 
 Love,
 
@@ -309,18 +250,15 @@ Love,
 
 Mustafa ❤️
 
-
 </p>
-
 
 </div>
 
+<button onclick="nextSection('sorry')">
 
+Continue
 
-<button onclick="nextScreen('sorry')">
-Continue ❤️
 </button>
-
 
 </div>
 
@@ -331,55 +269,47 @@ Continue ❤️
 
 
 
+<!-- SORRY -->
 
-<!-- SCREEN 7 : SORRY -->
+<section id="sorry" class="page">
 
+<div class="center">
 
-<section class="screen" id="sorry">
+<p class="eyebrow">
 
-
-<div class="content">
-
-
-<h1>❤️</h1>
-
-<h2>I'm Sorry</h2>
-
-
-<p>
-
-
-I know saying sorry doesn't fix everything.
-
-<br><br>
-
-I know I should have shown more effort before things got this far.
-
-<br><br>
-
-I don't want to force you to forgive me.
-
-<br><br>
-
-I just want you to know that you mean a lot to me.
-
-<br><br>
-
-I want to prove my love through my actions.
+One More Thing
 
 </p>
 
+<h1>I'm Sorry.</h1>
 
+<p class="text">
 
-<button onclick="nextScreen('choice')">
+I know sorry doesn't fix everything.
 
-Continue ❤️
+<br><br>
+
+I know I should've shown more effort before things got this far.
+
+<br><br>
+
+I don't expect instant forgiveness.
+
+<br><br>
+
+I only wanted to show you
+
+that I'm trying.
+
+</p>
+
+<button onclick="nextSection('choice')">
+
+Continue
 
 </button>
 
-
 </div>
-
 
 </section>
 
@@ -388,53 +318,49 @@ Continue ❤️
 
 
 
+<!-- CHOICE -->
 
-<!-- SCREEN 8 : CHOICE -->
+<section id="choice" class="page">
 
+<div class="center">
 
-<section class="screen" id="choice">
+<p class="eyebrow">
 
-
-<div class="content">
-
-
-<h1>❤️</h1>
-
-
-<h2>I Love You</h2>
-
-
-<p>
-
-But I also respect how you feel.
-
-<br><br>
-
-Whatever your heart says,
-I will respect it.
+After Everything...
 
 </p>
 
+<h1>One Last Question.</h1>
 
+<p class="text">
 
-<button onclick="happyEnding()">
+Whatever you choose,
+
+I'll respect it.
+
+</p>
+
+<div class="choices">
+
+<button class="primary"
+
+onclick="showEnding('happy')">
 
 ❤️ I Love You
 
 </button>
 
+<button class="secondary"
 
+onclick="showEnding('goodbye')">
 
-<button class="dark-button" onclick="sadEnding()">
-
-💭 I'm Not The One You Want
+💔 I'm Not The One You Want
 
 </button>
 
-
-
 </div>
 
+</div>
 
 </section>
 
@@ -444,43 +370,47 @@ I will respect it.
 
 
 
-<!-- SCREEN 9 : HAPPY ENDING -->
+<!-- HAPPY -->
 
+<section id="happy" class="page">
 
-<section class="screen" id="happy">
+<div class="center">
 
+<h1>❤️</h1>
 
-<div class="content">
+<h2>
 
+Thank you.
 
-<h1>🐧❤️</h1>
+</h2>
 
+<p class="text">
 
-<h2>Thank You</h2>
+You have no idea
 
-
-<p>
-
-
-You don't know how happy this makes me.
-
-<br><br>
-
-I promise this is not the end of my effort.
+how much this means to me.
 
 <br><br>
 
-It's the beginning.
+I promise this
+
+won't be the end
+
+of my effort.
 
 <br><br>
 
-I love you Cutiee ❤️
+It's only the beginning.
+
+<br><br>
+
+I love you,
+
+always.
 
 </p>
 
-
 </div>
-
 
 </section>
 
@@ -490,65 +420,57 @@ I love you Cutiee ❤️
 
 
 
+<!-- GOODBYE -->
 
-<!-- SCREEN 10 : HEARTBREAK -->
+<section id="goodbye" class="page goodbye">
 
-
-<section class="screen" id="sad">
-
-
-<div class="content">
-
+<div class="center">
 
 <h1>💔</h1>
 
+<h2>
 
-<h2>Goodbye Cutiee</h2>
+Goodbye,
 
+Cutiee.
 
-<p>
+</h2>
 
+<p class="text">
 
-I understand.
+Thank you
 
-<br><br>
+for every laugh,
 
-I won't force someone to stay where their heart doesn't want to be.
+every memory,
 
-<br><br>
-
-But I want you to know...
-
-<br><br>
-
-You were one of the most beautiful parts of my life.
+every smile.
 
 <br><br>
 
-Thank you for every laugh, every memory, and every moment.
+I hope life
+
+gives you
+
+everything
+
+you deserve.
 
 <br><br>
 
-I will always wish the best for you.
+You'll always
 
-<br><br>
+have a special
 
-❤️
+place in my heart.
 
 </p>
 
-
 </div>
-
 
 </section>
 
-
-
-
-
 <script src="script.js"></script>
-
 
 </body>
 
