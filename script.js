@@ -272,18 +272,43 @@ createPenguins();
 // FINAL BUTTONS
 // ================================
 
-document.getElementById("yesBtn").onclick=function(){
+document.getElementById("yesBtn").onclick = function () {
 
-this.innerHTML="❤️ Thank You ❤️";
+    document.getElementById("popup").style.display = "flex";
 
-this.disabled=true;
+    document.getElementById("popupTitle").innerHTML = "❤️ Thank You ❤️";
 
-alert("Thank you for giving us another chance ❤️");
+    document.getElementById("popupBody").innerHTML = `
+    Thank you for giving us another chance.
+
+    I promise I'll spend every day trying to be
+    someone who deserves your love.
+
+    🐧❤️
+    `;
+
+    startConfetti();
 
 }
 
-document.getElementById("timeBtn").onclick=function(){
+document.getElementById("timeBtn").onclick = function () {
 
-alert("That's okay. I'll respect your feelings and your time. ❤️");
+    document.getElementById("popup").style.display = "flex";
+
+    document.getElementById("popupTitle").innerHTML = "🌸";
+
+    document.getElementById("popupBody").innerHTML = `
+    That's okay.
+
+    I'll respect your feelings.
+
+    Thank you for taking the time
+    to go through everything I made.
+
+    No matter what happens,
+    you'll always be my favourite penguin.
+
+    🐧❤️
+    `;
 
 }
