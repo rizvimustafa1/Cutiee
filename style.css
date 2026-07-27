@@ -1,230 +1,170 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #fff5f8;
-    color: #444;
-    overflow: hidden;
+html{
+    scroll-behavior:smooth;
 }
 
+body{
 
-/* MAIN SCREEN */
+    background:#FFF8F5;
+    color:#2B2B2B;
 
-.screen {
+    font-family:"Inter",sans-serif;
 
-    display: none;
-    height: 100vh;
-    width: 100%;
+    overflow:hidden;
 
-    padding: 25px;
-
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
+    position:relative;
 
 }
 
 
-.screen.active {
+/* ===========================
+   BACKGROUND
+=========================== */
 
-    display: flex;
-    animation: fadeIn 0.8s ease;
+.background-glow{
 
-}
+    position:fixed;
 
+    inset:0;
 
+    background:
+    radial-gradient(circle at top,#ffd7e5 0%,transparent 40%),
+    radial-gradient(circle at bottom,#fff0d8 0%,transparent 45%);
 
-.content {
+    opacity:.45;
 
-    width: 100%;
-    max-width: 390px;
-
-}
-
-
-
-/* TEXT */
-
-
-h1 {
-
-    font-family: 'Pacifico', cursive;
-    color: #e75480;
-    font-size: 42px;
-    margin-bottom: 20px;
+    z-index:-2;
 
 }
 
 
+#hearts{
 
-h2 {
+    position:fixed;
 
-    color: #e75480;
-    font-size: 26px;
-    margin-bottom: 20px;
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-1;
 
 }
 
 
 
-p {
+/* ===========================
+   PAGES
+=========================== */
 
-    font-size: 15px;
-    line-height: 1.8;
+.page{
+
+    display:none;
+
+    width:100%;
+
+    height:100vh;
+
+    padding:40px 28px;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    animation:fade .7s ease;
+
+}
+
+.page.active{
+
+    display:flex;
+
+}
+
+
+.center{
+
+    width:100%;
+
+    max-width:380px;
 
 }
 
 
 
-/* BUTTONS */
+/* ===========================
+   TYPOGRAPHY
+=========================== */
 
+.eyebrow{
 
-button {
+    text-transform:uppercase;
 
-    margin-top: 30px;
+    letter-spacing:4px;
 
-    padding: 15px 35px;
+    color:#b57b8c;
 
-    border: none;
+    font-size:12px;
 
-    border-radius: 50px;
-
-    background: #ff7aa2;
-
-    color: white;
-
-    font-size: 16px;
-
-    font-weight: 600;
-
-    box-shadow:
-    0 10px 25px rgba(255,122,162,0.35);
+    margin-bottom:18px;
 
 }
 
 
+h1{
 
-button:active {
+    font-family:"Playfair Display",serif;
 
-    transform: scale(0.95);
+    font-size:46px;
 
-}
+    font-weight:700;
 
+    line-height:1.1;
 
-
-.dark-button {
-
-    background: #444;
-
-    margin-top: 15px;
+    margin-bottom:22px;
 
 }
 
 
+h2{
 
+    font-family:"Playfair Display",serif;
 
+    font-size:34px;
 
-/* LOADING */
-
-
-.loader {
-
-    height: 10px;
-
-    width: 220px;
-
-    background: #ffd6e2;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    margin: 30px auto;
+    margin-bottom:18px;
 
 }
 
 
-.loading-bar {
+.text{
 
-    height:100%;
+    line-height:1.9;
 
-    width:40%;
+    color:#5d5d5d;
 
-    background:#ff7aa2;
-
-    animation: loading 2s infinite;
+    font-size:16px;
 
 }
 
 
+.quote{
 
+    margin-top:30px;
 
-/* COUNTER */
-
-
-.counter {
-
-    display:grid;
-
-    grid-template-columns: repeat(3,1fr);
-
-    gap:12px;
-
-    margin-top:25px;
-
-}
-
-
-
-.counter div {
-
-
-    background:white;
-
-    padding:15px 5px;
-
-    border-radius:20px;
-
-    box-shadow:
-    0 8px 20px rgba(0,0,0,0.06);
-
-
-}
-
-
-
-.counter span {
-
-
-    display:block;
-
-    color:#e75480;
-
-    font-size:24px;
-
-    font-weight:600;
-
-
-}
-
-
-.counter small {
-
-    font-size:11px;
-
-}
-
-
-
-.quote {
-
-    margin-top:25px;
+    color:#b57b8c;
 
     font-style:italic;
 
@@ -232,179 +172,335 @@ button:active {
 
 
 
+/* ===========================
+   BUTTONS
+=========================== */
+
+button{
+
+    margin-top:38px;
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    font-family:"Inter";
+
+}
+
+
+.primary,
+button{
+
+    background:#d76c82;
+
+    color:white;
+
+}
+
+
+.secondary{
+
+    background:white;
+
+    color:#2B2B2B;
+
+    border:1px solid #e7d6da;
+
+}
+
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 35px rgba(215,108,130,.22);
+
+}
 
 
 
+/* ===========================
+   LOADER
+=========================== */
 
-/* COMPLIMENT WALL */
+.loader{
 
+    margin:40px auto;
 
-.compliments {
+    width:220px;
 
+    height:7px;
 
-    height:380px;
+    background:#efd6dd;
 
-    position:relative;
+    border-radius:50px;
 
     overflow:hidden;
 
 }
 
 
+.loader span{
 
-.compliments span {
+    display:block;
+
+    width:35%;
+
+    height:100%;
+
+    background:#d76c82;
+
+    animation:loading 2s infinite;
+
+}
 
 
-    position:absolute;
 
-    background:white;
+/* ===========================
+   COUNTER
+=========================== */
+
+.counter{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:14px;
+
+    margin-top:30px;
+
+}
+
+
+.counter div{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:20px;
+
+    padding:18px 8px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+}
+
+
+.counter span{
+
+    display:block;
+
+    font-size:28px;
+
+    color:#d76c82;
+
+    font-weight:700;
+
+}
+
+
+.counter small{
+
+    font-size:11px;
+
+    color:#777;
+
+}
+
+
+
+/* ===========================
+   LETTER
+=========================== */
+
+.letter{
+
+    margin-top:20px;
+
+    max-height:50vh;
+
+    overflow:auto;
+
+    text-align:left;
+
+    line-height:2;
+
+    color:#555;
+
+    padding-right:5px;
+
+}
+
+
+.letter::-webkit-scrollbar{
+
+    width:4px;
+
+}
+
+
+.letter::-webkit-scrollbar-thumb{
+
+    background:#d76c82;
+
+    border-radius:20px;
+
+}
+
+
+
+/* ===========================
+   COMPLIMENTS
+=========================== */
+
+#complimentArea{
+
+    margin-top:35px;
+
+    min-height:260px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+.compliment{
+
+    opacity:0;
+
+    transform:translateY(15px);
 
     padding:12px 18px;
 
     border-radius:30px;
 
-    box-shadow:
-    0 8px 20px rgba(0,0,0,0.08);
-
-    font-size:14px;
-
-    animation: floatWords 5s infinite alternate;
-
-
-}
-
-
-
-/* Random positions */
-
-
-.compliments span:nth-child(1){top:5%;left:5%}
-.compliments span:nth-child(2){top:15%;right:5%}
-.compliments span:nth-child(3){top:28%;left:25%}
-.compliments span:nth-child(4){top:40%;right:10%}
-.compliments span:nth-child(5){top:55%;left:5%}
-.compliments span:nth-child(6){top:70%;right:15%}
-.compliments span:nth-child(7){top:80%;left:25%}
-.compliments span:nth-child(8){top:10%;left:45%}
-.compliments span:nth-child(9){top:60%;right:40%}
-.compliments span:nth-child(10){top:35%;left:5%}
-
-.compliments span:nth-child(n+11){
-
-    display:none;
-
-}
-
-
-
-
-
-
-/* MEMORY */
-
-
-.photo-box {
-
-
-    width:100%;
-
-    height:230px;
-
     background:white;
 
-    border-radius:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
 
-    overflow:hidden;
+    color:#d76c82;
 
-    margin-bottom:20px;
+    font-weight:600;
 
-    box-shadow:
-    0 10px 25px rgba(0,0,0,0.08);
-
-}
-
-
-
-.photo-box img {
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
+    animation:pop .7s forwards;
 
 }
 
 
 
+/* ===========================
+   CHOICE
+=========================== */
 
+.choices{
 
+    margin-top:40px;
 
-/* LETTER */
+    display:flex;
 
+    flex-direction:column;
 
-.letter-box {
-
-
-    background:white;
-
-    border-radius:25px;
-
-    padding:25px;
-
-    max-height:420px;
-
-    overflow-y:auto;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,0.08);
-
+    gap:18px;
 
 }
 
 
 
+/* ===========================
+   GOODBYE PAGE
+=========================== */
+
+.goodbye{
+
+    background:#181818;
+
+    color:white;
+
+}
+
+
+.goodbye .text{
+
+    color:#cccccc;
+
+}
+
+
+.goodbye .eyebrow{
+
+    color:#888;
+
+}
+
+
+.goodbye h1,
+.goodbye h2{
+
+    color:white;
+
+}
 
 
 
+/* ===========================
+   FLOATING HEARTS
+=========================== */
 
-/* FLOATING HEARTS */
-
-
-.heart {
-
+.heart{
 
     position:absolute;
 
-    bottom:-20px;
+    bottom:-30px;
 
-    color:#ff7aa2;
+    color:#e17a95;
 
-    animation: hearts 6s linear infinite;
+    animation:heartFloat linear forwards;
 
 }
 
 
 
+/* ===========================
+   ANIMATIONS
+=========================== */
 
+@keyframes fade{
 
-/* ANIMATIONS */
-
-
-@keyframes fadeIn {
-
-
-    from {
+    from{
 
         opacity:0;
-        transform:translateY(30px);
+
+        transform:translateY(20px);
 
     }
 
-
-    to {
+    to{
 
         opacity:1;
+
         transform:translateY(0);
 
     }
@@ -412,44 +508,36 @@ button:active {
 }
 
 
+@keyframes loading{
 
+    from{
 
-@keyframes loading {
-
-
-    from {
-
-        transform:translateX(-150%);
+        transform:translateX(-160%);
 
     }
 
+    to{
 
-    to {
-
-        transform:translateX(300%);
+        transform:translateX(320%);
 
     }
 
 }
 
 
+@keyframes heartFloat{
 
-
-@keyframes hearts {
-
-
-    from {
+    from{
 
         transform:translateY(0);
 
-        opacity:1;
+        opacity:.9;
 
     }
 
+    to{
 
-    to {
-
-        transform:translateY(-110vh);
+        transform:translateY(-120vh);
 
         opacity:0;
 
@@ -458,21 +546,13 @@ button:active {
 }
 
 
+@keyframes pop{
 
+    to{
 
-@keyframes floatWords {
+        opacity:1;
 
-
-    from {
-
-        transform:rotate(-3deg) translateY(0);
-
-    }
-
-
-    to {
-
-        transform:rotate(3deg) translateY(-15px);
+        transform:translateY(0);
 
     }
 
@@ -480,24 +560,28 @@ button:active {
 
 
 
+/* ===========================
+   PHONE
+=========================== */
 
-/* MOBILE FIX */
-
-@media(max-width:400px){
-
+@media (max-width:390px){
 
     h1{
 
-        font-size:36px;
+        font-size:40px;
 
     }
-
 
     h2{
 
-        font-size:23px;
+        font-size:30px;
 
     }
 
+    .text{
+
+        font-size:15px;
+
+    }
 
 }
