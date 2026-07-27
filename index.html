@@ -1,57 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>For My Cutiee ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
 <body>
 
-<div id="loader">
-    <h1>🐧</h1>
-    <p>Loading something made with love...</p>
-</div>
+<!-- Floating Background -->
 
-<div id="hearts"></div>
-<div id="petals"></div>
+<div id="background"></div>
 
-<nav>
-    <h2>🐧 Cutiee</h2>
 
-    <div class="menu">
-        <a href="#story">Our Story</a>
-        <a href="#gallery">Memories</a>
-        <a href="#letters">Letters</a>
-        <a href="#promise">Promises</a>
-    </div>
-</nav>
 
-<section class="hero">
+<!-- HOME -->
+
+<section class="page active" id="home">
 
 <div class="glass">
 
+<div class="penguin">
+
+🐧
+
+</div>
+
 <h1>
-Hi My Favorite Penguin 🐧❤️
+
+Hi My Cutiee ❤️
+
 </h1>
 
 <p>
 
 I know one website cannot fix everything.
 
-But I wanted to spend hours creating something
-that reminds you how special you are to me.
+But I wanted to spend my time making something
 
-Not because I expect forgiveness...
-
-Because you're worth the effort.
+that was made only for you.
 
 </p>
 
-<button onclick="startJourney()">
-Start Our Journey ❤️
+<button onclick="nextPage('story')">
+
+Begin Our Story
+
 </button>
 
 </div>
 
 </section>
 
-<div id="penguin">
-🐧
+
+
+<!-- STORY -->
+
+<section class="page" id="story">
+
+<h2>
+
+📖 Our Story
+
+</h2>
+
+<div class="storyCard">
+
+<h3>
+
+How We Met
+
+</h3>
+
+<p>
+
+Write your story here...
+
+Replace this paragraph with your own.
+
+Tell her exactly how you met,
+
+what you first thought,
+
+what changed,
+
+and why that day mattered.
+
+</p>
+
 </div>
 
-<script src="script.js"></script>
+<button onclick="nextPage('counter')">
+
+Next ❤️
+
+</button>
+
+</section>
+
+
+
+<!-- COUNTER -->
+
+<section class="page" id="counter">
+
+<h2>
+
+❤️ Together Since
+
+</h2>
+
+<div id="timer">
+
+Loading...
+
+</div>
+
+<p>
+
+Every second has been my favourite.
+
+</p>
+
+<button onclick="nextPage('letters')">
+
+Continue
+
+</button>
+
+</section>
+
+
+
+<!-- LETTERS -->
+
+<section class="page" id="letters">
+
+<h2>
+
+💌 Love Letters
+
+</h2>
+
+<div class="letter"
+
+onclick="openLetter(0)">
+
+💌
+
+</div>
+
+<div class="letter"
+
+onclick="openLetter(1)">
+
+💌
+
+</div>
+
+<div class="letter"
+
+onclick="openLetter(2)">
+
+💌
+
+</div>
+
+<button onclick="nextPage('game')">
+
+Next
+
+</button>
+
+</section>
+
+
+
+<!-- GAME -->
+
+<section class="page" id="game">
+
+<h2>
+
+🐧 Catch The Penguin
+
+</h2>
+
+<p>
+
+Tap all 5 penguins.
+
+</p>
+
+<div id="gameArea">
+
+</div>
+
+<div id="gameMessage">
+
+</div>
+
+</section>
+
+
+
+<!-- FINAL -->
+
+<section class="page"
+
+id="final">
+
+<h1>
+
+❤️
+
+</h1>
+
+<h2>
+
+Will You Give Me Another Chance?
+
+</h2>
+
+<p>
+
+I know this website cannot fix everything.
+
+I simply wanted to spend my time making
+
+something that was only for you.
+
+</p>
+
+<div class="buttons">
+
+<button>
+
+Yes ❤️
+
+</button>
+
+<button>
+
+I Need More Time 🌸
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- POPUP -->
+
+<div id="popup">
+
+<div id="popupCard">
+
+<h2 id="popupTitle">
+
+</h2>
+
+<p id="popupText">
+
+</p>
+
+<button onclick="closePopup()">
+
+Close
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<script src="script.js">
+
+</script>
 
 </body>
+
+</html>
