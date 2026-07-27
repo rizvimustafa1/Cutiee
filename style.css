@@ -410,3 +410,27 @@ width:100%;
 max-width:380px;
 
 }
+
+.popupCard{
+
+animation:pop .35s ease;
+
+}
+
+@keyframes pop{
+
+from{
+
+transform:scale(.7);
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+opacity:1;
+
+}
+
+}
