@@ -1,78 +1,50 @@
-// ================================
-// PAGE NAVIGATION
-// ================================
+/* ===========================================
+   PAGE NAVIGATION
+=========================================== */
 
-function goToPage(pageId) {
-    document.querySelectorAll(".screen").forEach(screen => {
-        screen.classList.remove("active");
+function showPage(pageId){
+
+    const pages=document.querySelectorAll(".page");
+
+    pages.forEach(page=>{
+        page.classList.remove("active");
     });
 
     document.getElementById(pageId).classList.add("active");
-}
-
-// ================================
-// FLOATING HEARTS
-// ================================
-
-const heartsContainer = document.getElementById("hearts");
-
-function createHeart(){
-
-    const heart=document.createElement("div");
-
-    heart.className="heart";
-
-    const emojis=["❤️","💕","💖","🌸"];
-
-    heart.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
-
-    heart.style.left=Math.random()*100+"vw";
-
-    heart.style.fontSize=(18+Math.random()*18)+"px";
-
-    heart.style.animationDuration=(8+Math.random()*5)+"s";
-
-    heartsContainer.appendChild(heart);
-
-    setTimeout(()=>{
-        heart.remove();
-    },13000);
 
 }
 
-setInterval(createHeart,450);
-
-// ================================
-// STORY BOOK
-// ================================
+/* ===========================================
+   STORY BOOK
+=========================================== */
 
 const chapters=[
 
 {
 title:"How We Met ❤️",
-text:"Replace this with your own story."
+text:"Write your story here. Tell her how you first met, what you noticed first, and why that moment became special."
 },
 
 {
-title:"The First Time I Smiled Because Of You 🐧",
-text:"Write your second chapter here."
+title:"The Little Things 🐧",
+text:"Write about the small things she does that make you smile."
 },
 
 {
-title:"The Little Moments 🌸",
-text:"Write another memory here."
+title:"My Favourite Memories 🌸",
+text:"Write your favourite memory together."
 },
 
 {
 title:"Today ❤️",
-text:"Write what you want her to know today."
+text:"Write how you feel today and why you wanted to build this website."
 }
 
 ];
 
 let currentChapter=0;
 
-function showChapter(){
+function updateChapter(){
 
 document.getElementById("chapterTitle").innerHTML=chapters[currentChapter].title;
 
@@ -80,7 +52,7 @@ document.getElementById("chapterText").innerHTML=chapters[currentChapter].text;
 
 }
 
-showChapter();
+updateChapter();
 
 function nextChapter(){
 
@@ -88,7 +60,7 @@ if(currentChapter<chapters.length-1){
 
 currentChapter++;
 
-showChapter();
+updateChapter();
 
 }
 
@@ -100,15 +72,15 @@ if(currentChapter>0){
 
 currentChapter--;
 
-showChapter();
+updateChapter();
 
 }
 
 }
 
-// ================================
-// RELATIONSHIP COUNTER
-// ================================
+/* ===========================================
+   RELATIONSHIP COUNTER
+=========================================== */
 
 // CHANGE THIS DATE
 
@@ -130,13 +102,13 @@ const seconds=Math.floor(diff/1000)%60;
 
 document.getElementById("counterBox").innerHTML=`
 
-<div>${days} Days</div>
+${days} Days<br>
 
-<div>${hours} Hours</div>
+${hours} Hours<br>
 
-<div>${minutes} Minutes</div>
+${minutes} Minutes<br>
 
-<div>${seconds} Seconds</div>
+${seconds} Seconds
 
 `;
 
@@ -146,9 +118,9 @@ setInterval(updateCounter,1000);
 
 updateCounter();
 
-// ================================
-// LOVE LETTERS
-// ================================
+/* ===========================================
+   LOVE LETTERS
+=========================================== */
 
 const letters=[
 
@@ -156,23 +128,31 @@ const letters=[
 
 title:"Dear Cutiee ❤️",
 
-body:"Write your first love letter here."
+text:"Write your first love letter here."
 
 },
 
 {
 
-title:"My Favourite Penguin 🐧",
+title:"You Make My World Better 🐧",
 
-body:"Write your second love letter here."
+text:"Write your second love letter here."
 
 },
 
 {
 
-title:"One Last Letter 🌸",
+title:"Thank You ❤️",
 
-body:"Write your third love letter here."
+text:"Write your third love letter here."
+
+},
+
+{
+
+title:"One Last Thing 🌸",
+
+text:"Write your final letter here."
 
 }
 
@@ -184,175 +164,12 @@ document.getElementById("popup").style.display="flex";
 
 document.getElementById("popupTitle").innerHTML=letters[index].title;
 
-document.getElementById("popupBody").innerHTML=letters[index].body;
+document.getElementById("popupText").innerHTML=letters[index].text;
 
 }
 
 function closePopup(){
 
 document.getElementById("popup").style.display="none";
-
-}
-
-// ================================
-// MINI GAME
-// ================================
-
-const gameArea=document.getElementById("gameArea");
-
-let score=0;
-
-function createPenguins(){
-
-gameArea.innerHTML="";
-
-score=0;
-
-document.getElementById("gameResult").innerHTML="";
-
-for(let i=0;i<5;i++){
-
-const penguin=document.createElement("div");
-
-penguin.innerHTML="🐧";
-
-penguin.style.position="absolute";
-
-penguin.style.left=Math.random()*80+"%";
-
-penguin.style.top=Math.random()*80+"%";
-
-penguin.style.fontSize="48px";
-
-penguin.style.cursor="pointer";
-
-penguin.onclick=function(){
-
-penguin.remove();
-
-score++;
-
-if(score===5){
-
-document.getElementById("gameResult").innerHTML=`
-
-<h3>🎁 Surprise ❤️</h3>
-
-<p>
-
-You once told me that you wanted effort...
-
-not words.
-
-So I made this little website for you.
-
-</p>
-
-<button onclick="goToPage('promises')">
-
-Continue ❤️
-
-</button>
-
-`;
-
-}
-
-};
-
-gameArea.appendChild(penguin);
-
-}
-
-}
-
-createPenguins();
-
-// ================================
-// FINAL BUTTONS
-// ================================
-
-document.getElementById("yesBtn").onclick = function () {
-
-    document.getElementById("popup").style.display = "flex";
-
-    document.getElementById("popupTitle").innerHTML = "❤️ Thank You ❤️";
-
-    document.getElementById("popupBody").innerHTML = `
-    Thank you for giving us another chance.
-
-    I promise I'll spend every day trying to be
-    someone who deserves your love.
-
-    🐧❤️
-    `;
-
-    startConfetti();
-
-}
-
-document.getElementById("timeBtn").onclick = function () {
-
-    document.getElementById("popup").style.display = "flex";
-
-    document.getElementById("popupTitle").innerHTML = "🌸";
-
-    document.getElementById("popupBody").innerHTML = `
-    That's okay.
-
-    I'll respect your feelings.
-
-    Thank you for taking the time
-    to go through everything I made.
-
-    No matter what happens,
-    you'll always be my favourite penguin.
-
-    🐧❤️
-    `;
-
-}
-
-// ================================
-// CONFETTI
-// ================================
-
-function startConfetti(){
-
-for(let i=0;i<120;i++){
-
-const c=document.createElement("div");
-
-c.innerHTML=["❤️","🌸","💕","💖"][Math.floor(Math.random()*4)];
-
-c.style.position="fixed";
-
-c.style.left=Math.random()*100+"vw";
-
-c.style.top="-50px";
-
-c.style.fontSize=(20+Math.random()*20)+"px";
-
-c.style.pointerEvents="none";
-
-c.style.zIndex=9999;
-
-c.style.transition="4s linear";
-
-document.body.appendChild(c);
-
-setTimeout(()=>{
-
-c.style.transform=`translateY(${window.innerHeight+200}px) rotate(${Math.random()*720}deg)`;
-
-},20);
-
-setTimeout(()=>{
-
-c.remove();
-
-},4500);
-
-}
 
 }
