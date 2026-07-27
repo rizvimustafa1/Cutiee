@@ -3,440 +3,553 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>For My Cutiee ❤️</title>
+<title>For My Cutiee ❤️</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 </head>
 
+
 <body>
+
 
 <div id="hearts"></div>
 
-<!-- ================= HOME ================= -->
 
-<section class="page active" id="home">
 
-<div class="glass">
+<!-- SCREEN 1 : LOADING -->
 
-<div class="penguin">
+<section class="screen active" id="loading">
 
-🐧
+    <div class="content">
 
-</div>
+        <h1>❤️</h1>
 
-<h1>
+        <h2>I made something<br>for you...</h2>
 
-Hi Cutiee ❤️
+        <div class="loader">
+            <div class="loading-bar"></div>
+        </div>
 
-</h1>
+    </div>
+
+</section>
+
+
+
+
+<!-- SCREEN 2 : WELCOME -->
+
+<section class="screen" id="welcome">
+
+<div class="content">
+
+<h1>Hi Cutiee ❤️</h1>
+
 
 <p>
 
-I know one website can't fix everything.
+I have spent my whole day making this for you.
 
-But I wanted to spend my time making something that was made only for you.
+<br><br>
+
+Me ye idea apology ke liye use nahi karna chahta tha...
+
+<br><br>
+
+<b>BUT HERE WE ARE 😭❤️</b>
+
+<br><br>
+
+I just wanted to show you that you are worth my effort.
 
 </p>
 
-<button onclick="showPage('story')">
 
-Begin Our Story
-
+<button onclick="nextScreen('story')">
+Enter ❤️
 </button>
+
 
 </div>
 
 </section>
 
-<!-- ================= STORY ================= -->
 
-<section class="page" id="story">
 
-<div class="glass book">
 
-<h2>
 
-📖 Our Story
+<!-- SCREEN 3 : STORY -->
 
-</h2>
+<section class="screen" id="story">
 
-<div class="chapter">
+<div class="content">
 
-<h3 id="chapterTitle">
 
-How We Met
+<h1>🐧❤️</h1>
 
-</h3>
+<h2>Our Story</h2>
 
-<p id="chapterText">
 
-Your first story goes here.
+<p>
+Since 13 April 2025
+</p>
 
-Talk about how you met.
 
-What you first thought.
 
-How everything slowly changed.
+<div class="counter">
 
-This is where your memories begin.
+
+<div>
+<span id="years">0</span>
+<small>Years</small>
+</div>
+
+
+<div>
+<span id="months">0</span>
+<small>Months</small>
+</div>
+
+
+<div>
+<span id="days">0</span>
+<small>Days</small>
+</div>
+
+
+<div>
+<span id="hours">0</span>
+<small>Hours</small>
+</div>
+
+
+<div>
+<span id="minutes">0</span>
+<small>Minutes</small>
+</div>
+
+
+<div>
+<span id="seconds">0</span>
+<small>Seconds</small>
+</div>
+
+
+</div>
+
+
+<p class="quote">
+Every second with you is worth it ❤️
+</p>
+
+
+<button onclick="nextScreen('special')">
+Continue ❤️
+</button>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<!-- SCREEN 4 : WHY YOU ARE SPECIAL -->
+
+
+<section class="screen" id="special">
+
+<div class="content">
+
+
+<h1>🌸</h1>
+
+<h2>Why You Are Special</h2>
+
+
+<div class="compliments">
+
+
+<span>Your Smile ❤️</span>
+<span>Your Laugh 😂</span>
+<span>My Cutiee 🐧</span>
+<span>Beautiful 🌸</span>
+<span>Pretty ✨</span>
+<span>Hot 🔥</span>
+<span>Ice Cream Lover 🍦</span>
+<span>Your Cute Anger 😭</span>
+<span>Your Eyes ❤️</span>
+<span>Your Voice 💕</span>
+<span>Your Random Stories</span>
+<span>Your Kind Heart</span>
+<span>Your Crazy Side 😂</span>
+<span>Your Little Habits</span>
+<span>Your Caring Nature</span>
+<span>Your Innocence</span>
+<span>Your Hugs 🤍</span>
+<span>Your Smile After Laughing</span>
+<span>The Way You Talk</span>
+<span>The Way You Make Me Happy</span>
+<span>My Favourite Human ❤️</span>
+
+
+</div>
+
+
+<button onclick="nextScreen('memory')">
+Continue ❤️
+</button>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+<!-- SCREEN 5 : MEMORY -->
+
+
+<section class="screen" id="memory">
+
+<div class="content">
+
+
+<h1>📸</h1>
+
+<h2>My Favourite Memory</h2>
+
+
+
+<div class="photo-box">
+
+<img src="memory.jpg" alt="Our Memory">
+
+</div>
+
+
+
+<p>
+
+Our first and only meetup ❤️
+
+<br><br>
+
+Not a date...
+
+but still one of my favourite moments.
+
+<br><br>
+
+Because I finally got to spend time with you.
 
 </p>
 
-</div>
 
-<div class="storyButtons">
 
-<button onclick="previousChapter()">
-
-← Previous
-
+<button onclick="nextScreen('letter')">
+Continue ❤️
 </button>
 
-<button onclick="nextChapter()">
-
-Next →
-
-</button>
 
 </div>
 
-<div class="continueButton">
+</section>
 
-<button onclick="showPage('counter')">
+
+
+
+
+
+<!-- SCREEN 6 : LETTER -->
+
+
+<section class="screen" id="letter">
+
+<div class="content">
+
+
+<h1>💌</h1>
+
+<h2>My Letter</h2>
+
+
+
+<div class="letter-box">
+
+
+<p>
+
+My dearest Cutiee,
+
+<br><br>
+
+
+(Write your letter here)
+
+<br><br>
+
+
+Love,
+
+<br>
+
+Mustafa ❤️
+
+
+</p>
+
+
+</div>
+
+
+
+<button onclick="nextScreen('sorry')">
+Continue ❤️
+</button>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<!-- SCREEN 7 : SORRY -->
+
+
+<section class="screen" id="sorry">
+
+
+<div class="content">
+
+
+<h1>❤️</h1>
+
+<h2>I'm Sorry</h2>
+
+
+<p>
+
+
+I know saying sorry doesn't fix everything.
+
+<br><br>
+
+I know I should have shown more effort before things got this far.
+
+<br><br>
+
+I don't want to force you to forgive me.
+
+<br><br>
+
+I just want you to know that you mean a lot to me.
+
+<br><br>
+
+I want to prove my love through my actions.
+
+</p>
+
+
+
+<button onclick="nextScreen('choice')">
 
 Continue ❤️
 
 </button>
 
-</div>
 
 </div>
+
 
 </section>
 
-<!-- ================= COUNTER ================= -->
 
-<section class="page" id="counter">
 
-<div class="glass">
 
-<h2>
 
-❤️ Together Since
 
-</h2>
 
-<div id="counterBox">
+<!-- SCREEN 8 : CHOICE -->
 
-0 Days
 
-</div>
+<section class="screen" id="choice">
+
+
+<div class="content">
+
+
+<h1>❤️</h1>
+
+
+<h2>I Love You</h2>
+
 
 <p>
 
-Every second with you has been worth it.
+But I also respect how you feel.
+
+<br><br>
+
+Whatever your heart says,
+I will respect it.
 
 </p>
 
-<button onclick="showPage('letters')">
 
-Continue
+
+<button onclick="happyEnding()">
+
+❤️ I Love You
 
 </button>
 
+
+
+<button class="dark-button" onclick="sadEnding()">
+
+💭 I'm Not The One You Want
+
+</button>
+
+
+
 </div>
+
 
 </section>
 
-<!-- ================= LETTERS ================= -->
 
-<section class="page" id="letters">
 
-<div class="glass">
 
-<h2>
 
-💌 Love Letters
 
-</h2>
+
+<!-- SCREEN 9 : HAPPY ENDING -->
+
+
+<section class="screen" id="happy">
+
+
+<div class="content">
+
+
+<h1>🐧❤️</h1>
+
+
+<h2>Thank You</h2>
+
 
 <p>
 
-Tap an envelope.
+
+You don't know how happy this makes me.
+
+<br><br>
+
+I promise this is not the end of my effort.
+
+<br><br>
+
+It's the beginning.
+
+<br><br>
+
+I love you Cutiee ❤️
 
 </p>
 
-<div class="letters">
-
-<div class="letter" onclick="openLetter(0)">
-💌
-</div>
-
-<div class="letter" onclick="openLetter(1)">
-💌
-</div>
-
-<div class="letter" onclick="openLetter(2)">
-💌
-</div>
-
-<div class="letter" onclick="openLetter(3)">
-💌
-</div>
 
 </div>
 
-<button onclick="showPage('game')">
-
-Continue
-
-</button>
-
-</div>
 
 </section>
 
-<!-- ================= GAME ================= -->
 
-<section class="page" id="game">
 
-<div class="glass">
 
-<h2>
 
-🐧 Catch The Penguins
 
-</h2>
+
+
+<!-- SCREEN 10 : HEARTBREAK -->
+
+
+<section class="screen" id="sad">
+
+
+<div class="content">
+
+
+<h1>💔</h1>
+
+
+<h2>Goodbye Cutiee</h2>
+
 
 <p>
 
-Catch every penguin to unlock the surprise.
 
-</p>
+I understand.
 
-<div id="gameArea">
+<br><br>
 
-</div>
+I won't force someone to stay where their heart doesn't want to be.
 
-<div id="gameResult">
+<br><br>
 
-</div>
+But I want you to know...
 
-</div>
-  
-  <!-- ================= PROMISES ================= -->
+<br><br>
 
-<section class="page" id="promises">
+You were one of the most beautiful parts of my life.
 
-<div class="glass">
+<br><br>
 
-<h2>
-🌸 My Promises
-</h2>
+Thank you for every laugh, every memory, and every moment.
 
-<p class="promiseIntro">
-These aren't just words.
-These are promises I want to keep.
-</p>
+<br><br>
 
-<div class="promiseList">
+I will always wish the best for you.
 
-<div class="promiseCard">
-❤️ I'll communicate better.
-</div>
-
-<div class="promiseCard">
-❤️ I'll listen before reacting.
-</div>
-
-<div class="promiseCard">
-❤️ I'll appreciate the little things.
-</div>
-
-<div class="promiseCard">
-❤️ I'll always choose us.
-</div>
-
-<div class="promiseCard">
-❤️ I'll keep becoming a better person.
-</div>
-
-</div>
-
-<button onclick="showPage('final')">
-
-One Last Thing ❤️
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ================= FINAL ================= -->
-
-<section class="page" id="final">
-
-<div class="glass finalCard">
-
-<div class="bigHeart">
+<br><br>
 
 ❤️
 
-</div>
-
-<h2>
-
-Will You Give Me Another Chance?
-
-</h2>
-
-<p>
-
-I'm not expecting this website to erase everything.
-
-I just wanted to spend my time creating something
-that reminds you how much you mean to me.
-
-Whether your answer is today,
-next week,
-or much later...
-
-I'll always be grateful that you were part of my life.
-
 </p>
 
-<div class="finalButtons">
-
-<button id="yesButton">
-
-Yes ❤️
-
-</button>
-
-<button id="timeButton">
-
-I Need More Time 🌸
-
-</button>
 
 </div>
 
-</div>
 
 </section>
 
-<!-- ================= POPUP ================= -->
 
-<div id="popup">
 
-<div class="popupCard">
 
-<h2 id="popupTitle">
-
-Title
-
-</h2>
-
-<p id="popupText">
-
-Letter goes here.
-
-</p>
-
-<button onclick="closePopup()">
-
-Close
-
-</button>
-
-</div>
-
-</div>
-
-<!-- ================= SUCCESS SCREEN ================= -->
-
-<section class="page" id="success">
-
-<div class="glass">
-
-<div class="bigHeart">
-
-💖
-
-</div>
-
-<h1>
-
-Thank You
-
-</h1>
-
-<p>
-
-Thank you for giving us another chance.
-
-I know this is only the beginning.
-
-I promise to spend every day trying to deserve your love.
-
-🐧❤️
-
-</p>
-
-</div>
-
-</section>
-
-<!-- ================= WAIT SCREEN ================= -->
-
-<section class="page" id="wait">
-
-<div class="glass">
-
-🌸
-
-<h2>
-
-That's Okay
-
-</h2>
-
-<p>
-
-If you're not ready...
-
-I'll respect your feelings.
-
-Thank you for taking the time
-to go through everything I made.
-
-Whether your answer changes or not...
-
-You'll always be my favourite penguin.
-
-🐧❤️
-
-</p>
-
-</div>
-
-</section>
 
 <script src="script.js"></script>
+
 
 </body>
 
 </html>
-
-</section>
