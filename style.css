@@ -1,84 +1,291 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(180deg,#ffd6e7,#fff5f9);
+}
+
 body{
-margin:0;
-overflow-x:hidden;
-background:linear-gradient(135deg,#ffd6e8,#ffeef7);
-font-family:Arial,sans-serif;
+    position:relative;
 }
 
-nav{
-position:fixed;
-top:0;
-left:0;
+/* Floating hearts background */
+
+#background{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    overflow:hidden;
+}
+
+.heart{
+    position:absolute;
+    color:#ff6b9d;
+    animation:floatUp linear infinite;
+    opacity:.6;
+}
+
+@keyframes floatUp{
+
+0%{
+transform:translateY(100vh) scale(.5);
+}
+
+100%{
+transform:translateY(-10vh) scale(1.2);
+}
+
+}
+
+/* Pages */
+
+.page{
+
 width:100%;
-display:flex;
-justify-content:space-between;
-padding:20px;
-background:rgba(255,255,255,.3);
-backdrop-filter:blur(15px);
-z-index:100;
-}
-
-.menu a{
-margin:15px;
-text-decoration:none;
-color:#ff3d77;
-font-weight:bold;
-}
-
-.hero{
 height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
+
+display:none;
+
 padding:30px;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
 }
+
+.page.active{
+
+display:flex;
+
+animation:fade .8s;
+
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* Glass Card */
 
 .glass{
+
 background:rgba(255,255,255,.35);
-padding:50px;
-border-radius:25px;
-backdrop-filter:blur(20px);
-box-shadow:0 15px 40px rgba(0,0,0,.15);
-max-width:700px;
+
+backdrop-filter:blur(18px);
+
+padding:35px;
+
+border-radius:30px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+width:100%;
+
+max-width:380px;
+
 }
 
-.glass h1{
-font-size:55px;
+/* Penguin */
+
+.penguin{
+
+font-size:70px;
+
+animation:bounce 2s infinite;
+
 }
 
-.glass p{
-font-size:22px;
+@keyframes bounce{
+
+50%{
+transform:translateY(-10px);
+}
+
+}
+
+/* Headings */
+
+h1{
+
+font-family:'Dancing Script',cursive;
+
+font-size:48px;
+
+margin-bottom:20px;
+
+color:#ff3d77;
+
+}
+
+h2{
+
+font-size:32px;
+
+margin-bottom:25px;
+
+color:#ff3d77;
+
+}
+
+h3{
+
+margin-bottom:15px;
+
+}
+
+/* Paragraph */
+
+p{
+
 line-height:1.7;
+
+font-size:17px;
+
+margin-bottom:25px;
+
 }
+
+/* Buttons */
 
 button{
-padding:18px 45px;
-font-size:22px;
+
 background:#ff4f87;
-border:none;
-border-radius:50px;
+
 color:white;
+
+border:none;
+
+padding:16px 28px;
+
+border-radius:50px;
+
+font-size:18px;
+
 cursor:pointer;
-transition:.4s;
+
+transition:.3s;
+
+margin-top:20px;
+
 }
 
-button:hover{
-transform:scale(1.08);
+button:active{
+
+transform:scale(.95);
+
 }
 
-#penguin{
+/* Story */
+
+.storyCard{
+
+background:white;
+
+padding:25px;
+
+border-radius:20px;
+
+width:100%;
+
+max-width:420px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+/* Counter */
+
+#timer{
+
+font-size:30px;
+
+font-weight:bold;
+
+margin:30px;
+
+color:#ff3d77;
+
+}
+
+/* Letters */
+
+.letter{
+
+font-size:60px;
+
+margin:15px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.letter:active{
+
+transform:scale(1.2);
+
+}
+
+/* Popup */
+
+#popup{
+
+display:none;
+
 position:fixed;
-bottom:20px;
-right:-80px;
-font-size:70px;
-animation:waddle 18s linear infinite;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.6);
+
+justify-content:center;
+
+align-items:center;
+
+padding:20px;
+
 }
 
-@keyframes waddle{
+#popupCard{
 
-0%{right:-80px;}
+background:white;
 
-100%{right:110%;}
+padding:30px;
+
+border-radius:20px;
+
+max-width:380px;
+
+width:100%;
 
 }
