@@ -168,3 +168,49 @@ Continue ❤️
 gameArea.appendChild(penguin);
 
 }
+
+// STORYBOOK
+
+const chapters=[
+
+{
+title:"How We Met ❤️",
+text:"Write your first story here."
+},
+
+{
+title:"The Day I Knew 🐧",
+text:"Write your second story here."
+},
+
+{
+title:"My Favourite Person 🌸",
+text:"Write your third story here."
+},
+
+{
+title:"Today ❤️",
+text:"Write whatever you want her to know."
+}
+
+];
+
+let chapter=0;
+
+document.getElementById("nextChapterBtn").onclick=function(){
+
+chapter++;
+
+if(chapter>=chapters.length){
+
+nextPage("counter");
+
+return;
+
+}
+
+document.querySelector(".chapter h3").innerHTML=chapters[chapter].title;
+
+document.getElementById("chapterText").innerHTML=chapters[chapter].text;
+
+}
