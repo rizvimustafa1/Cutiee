@@ -1,17 +1,17 @@
-function showMessage(){
-
-document.getElementById("hiddenMessage").style.display="block";
-
+window.onload=()=>{
+setTimeout(()=>{
+document.getElementById("loader").style.display="none";
+},2000);
 }
 
-function love(){
+function startJourney(){
 
-document.getElementById("popup").style.display="flex";
+window.scrollTo({
 
-}
+top:window.innerHeight,
 
-function closePopup(){
+behavior:"smooth"
 
-document.getElementById("popup").style.display="none";
+});
 
 }
